@@ -14,10 +14,11 @@ export function makeQueryClient(): QueryClient {
   return new QueryClient({
     defaultOptions: {
       queries: {
+        gcTime: 60 * 1000 * 5, // Data is considered fresh for 5 minutes (reduces unnecessary refetching)
         staleTime: 60 * 1000 * 5, // Data is considered fresh for 5 minutes (reduces unnecessary refetching)
         refetchOnWindowFocus: false, // Prevents automatic refetching when the window regains focus
         retry: 1, // Retries failed queries only once
-        experimental_prefetchInRender: true, // Enables experimental prefetching during render
+        experimental_prefetchInRender: true, // Enables experimental prefetching during render,
       },
     },
   });
