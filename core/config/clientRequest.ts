@@ -1,10 +1,6 @@
 import axios from "axios";
 import { site } from "./site";
-import { Session } from "next-auth";
-import { isServer } from "@tanstack/react-query";
-import { getSession, signOut } from "next-auth/react";
-
-let cachedSession: Session | null = null;
+import { signOut } from "next-auth/react";
 
 /**
  * Creates an Axios instance with a predefined base URL.
@@ -19,18 +15,6 @@ const instance = axios.create({
  */
 instance.interceptors.request.use(
   async (request) => {
-    request.headers["CLIENT-TYPE"] = "WEB-CLIENT";
-
-    if (!isServer) {
-      if (!cachedSession) {
-        cachedSession = await getSession();
-      }
-
-      if (cachedSession?.token) {
-        request.headers["Authorization"] = `Bearer ${cachedSession.token}`;
-      }
-    }
-
     if (request.params && Object.keys(request.params).length) {
       for (const key of Object.keys(request.params)) {
         if (request.params[key] === "" || request.params[key] === undefined) {
