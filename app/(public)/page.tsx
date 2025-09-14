@@ -1,3 +1,9 @@
+import { FakeQuery } from "@/components/fakeQuery";
+
 export default function Home() {
-  return <div>Home</div>;
+  return (
+    <div>
+      <FakeQuery />
+    </div>
+  );
 }
