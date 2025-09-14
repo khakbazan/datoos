@@ -5,3 +5,4 @@ export * from "./serverRequest";
 export * from "./site";
 export * from "./queryClient";
 export * from "./fonts";
+export * from "./idbPersister";
