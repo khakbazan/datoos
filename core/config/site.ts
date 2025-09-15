@@ -1,7 +1,7 @@
 export const site = {
   name: {
-    fa: "Crypto",
-    en: "Crypto",
+    fa: "Datoos",
+    en: "Datoos",
   },
   slogan: "",
   title: "",
