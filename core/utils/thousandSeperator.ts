@@ -14,8 +14,13 @@ export function thousandSeperator(
     return `0 ${prefix ?? ""}`.trim();
   }
 
+  const numberValue = Number(value);
+
   // Ensure value is a string before applying formatting
-  const formattedValue = value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  const formattedValue = numberValue
+    .toFixed(numberValue > 0 ? 2 : 4)
+    .toString()
+    .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
   return prefix ? `${formattedValue} ${prefix}` : formattedValue;
 }
