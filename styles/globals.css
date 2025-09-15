@@ -83,6 +83,10 @@ body {
     direction: ltr;
   }
 
+  .rtl {
+    direction: rtl;
+  }
+
   a, button {
     -webkit-tap-highlight-color: transparent; /* Removes gray highlight in iOS Safari */
     -webkit-touch-callout: none;              /* Disables long press callout menu */
