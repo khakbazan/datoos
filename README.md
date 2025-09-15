@@ -1,4 +1,4 @@
-# 🚀 BitFx
+# 🚀 Datoos
 
 ## 📖 Overview
 
@@ -18,7 +18,7 @@ This project provides **a well-structured architecture**, essential tools, and a
 
 This folder contains **the project's abstraction layer**, including:
 
-- **UI Kit (`HeroUI`)** →HeroUI components.
+- **UI Kit (`HeroUI`)** → HeroUI components.
 - **Core Hooks (`core/hooks/`)** → Well-documented, reusable hooks.
 - **Core Utilities (`core/utils/`)** → Helper functions.
 - **Configurations (`core/config/`)** → Global configurations:
@@ -45,11 +45,11 @@ For example, if implementing a **Users List Page**, the structure should be:
 components/
  ├── users/
  │ ├── users-list/
- |    ├── users-list/
- |    |    index.tsx
- |    |     types.ts // used types in index.tsx
- |    |     constants.ts // any constants used in index.tsx
- |    |     schema.ts  // if index.tsx contains form, we create zod schema of form here
+ │    ├── users-list/
+ │    │    index.tsx
+ │    │    types.ts // used types in index.tsx
+ │    │    constants.ts // any constants used in index.tsx
+ │    │    schema.ts  // if index.tsx contains form, we create zod schema of form here
 ```
 
 ---
@@ -57,6 +57,15 @@ components/
 ### 🪝 **hooks/**
 
 Contains **custom hooks that are specific to this project**.
+
+---
+
+### 💾 **IndexedDB as React Query Persister**
+
+This project uses **IndexedDB** as a persister for **React Query** to cache API responses. This enables:
+
+- **Faster page loads** by instantly displaying cached data from IndexedDB.
+- **Persistent data** even after page refreshes, with background updates to ensure data freshness.
 
 ---
 
