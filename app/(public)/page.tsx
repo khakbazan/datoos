@@ -1,9 +1,9 @@
-import { FakeQuery } from "@/components/fakeQuery";
+import { CurrenciesList } from "@/components/home-page";
 
 export default function Home() {
   return (
-    <div>
-      <FakeQuery />
+    <div className="container mx-auto px-3">
+      <CurrenciesList />
     </div>
   );
 }
