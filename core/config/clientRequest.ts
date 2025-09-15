@@ -38,8 +38,6 @@ instance.interceptors.request.use(
 instance.interceptors.response.use(
   (response) => response,
   async (error) => {
-    console.log(error?.response?.data);
-
     if (error?.response?.data?.statusCode === 401) {
       await signOut();
     }
