@@ -2,12 +2,7 @@ import "@/styles/globals.css";
 import { Metadata, Viewport } from "next";
 import clsx from "clsx";
 import { Providers } from "./providers";
-import {
-  auth,
-  fontIranYekanMobile,
-  fontIranYekanWeb,
-  site,
-} from "@/core/config";
+import { fontVazirmatn, site } from "@/core/config";
 
 export const metadata: Metadata = {
   generator: "Next.js",
@@ -54,9 +49,8 @@ export default async function RootLayout({
       <head />
       <body
         className={clsx(
-          "min-h-screen text-foreground bg-background font-iranyekanmobile md:font-iranyekanweb antialiased",
-          fontIranYekanWeb.variable,
-          fontIranYekanMobile.variable
+          "min-h-screen text-foreground bg-background font-vazirmatn antialiased",
+          fontVazirmatn.className
         )}
       >
         <Providers themeProps={{ attribute: "class", defaultTheme: "light" }}>
